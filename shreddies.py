@@ -30,6 +30,7 @@ NOSH_MOO_UNIT = {
     Nosh.MILK: "pints"
 }
 
+
 def total(nosh_of_choice):
     result = "<div class='noshSummary'>"
     eats = Nom.query().order(-Nom.date).fetch(1000)
@@ -37,7 +38,7 @@ def total(nosh_of_choice):
     for eat in eats:
         if (eat.food==nosh_of_choice):
             total += eat.amount
-    result += "Since records began, Mallinson has nommed {} {} of {}.<br/>"
+    result += "Since records began, Mallinson has nommed {} {} of {}<br/>"
               .format(total, NOSH_MOO_UNIT[nosh_of_choice], nosh_of_choice.name)
     # Special cases below
     if (nosh_of_choice == Nosh.SHREDDIES):
