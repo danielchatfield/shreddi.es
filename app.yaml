@@ -18,7 +18,7 @@ libraries:
 - name: markupsafe
   version: "0.15"
 - name: pycrypto
-  version: "2.3"
+  version: "2.6"
 
 inbound_services:
 - warmup
