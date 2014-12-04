@@ -30,6 +30,25 @@ NOSH_MOO_UNIT = {
     Nosh.MILK: "pints"
 }
 
+def total(noshOfChoice):
+    result = "<div class='noshSummary'>"
+    eats = Nom.query().order(-Nom.date).fetch(1000)
+    total = 0
+    for eat in eats:
+        if (eat.food==noshOfChoice):
+            total += eat.amount
+    result += "Since records began, Mallinson has nommed {} {} of {}.<br/>"
+              .format(total, NOSH_MOO_UNIT[noshOfChoice], noshOfChoice.name)
+    #Special cases below
+    if (noshOfChoice = Nosh.SHREDDIES):
+        result += "This is equivalent to {} red bricks.<br/>"
+                .format(total / 2500)
+    elif (noshOfChoice = Nosh.MILK):
+        result += "This is equivalent to {} olympic sized swimming pools<br/>"
+                .format(total / 4385964.912)
+    result+= "</div>"
+    return result
+
 
 @app.route('/')
 def home():
@@ -39,7 +58,8 @@ def home():
         result += "<div class='recordOfNom'>"
         result += "mallinson nommed {} {} of {} on {}</div><br/>".format(
             eat.amount, NOSH_MOO_UNIT[eat.food], eat.food.name, eat.date)
-	result += "</div>"
+	result += "</div>
+    result+="<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
     return result
 
 
