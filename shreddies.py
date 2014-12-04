@@ -40,10 +40,10 @@ def total(nosh_of_choice):
     result += "Since records began, Mallinson has nommed {} {} of {}.<br/>"
               .format(total, NOSH_MOO_UNIT[nosh_of_choice], nosh_of_choice.name)
     # Special cases below
-    if (nosh_of_choice = Nosh.SHREDDIES):
+    if (nosh_of_choice == Nosh.SHREDDIES):
         result += "This is equivalent to {} red bricks.<br/>"
                 .format(total / 2500)
-    elif (nosh_of_choice = Nosh.MILK):
+    elif (nosh_of_choice == Nosh.MILK):
         result += "This is equivalent to {} olympic sized swimming pools<br/>"
                 .format(total / 4385964.912)
     result += "</div>"
