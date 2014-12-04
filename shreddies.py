@@ -34,9 +34,9 @@ NOSH_MOO_UNIT = {
 @app.route('/')
 def home():
     eats = Nom.query().order(-Nom.date).fetch(1000)
-    result = "<h1>mallinson's shreddies nommation ~#~#~</h1><br/><div id="nomTable">
+    result = "<h1>mallinson's shreddies nommation ~#~#~</h1><br/><div id='nomTable'>"
     for eat in eats:
-		result += "<div class="recordOfNom">
+        result += "<div class='recordOfNom'>"
         result += "mallinson nommed {} {} of {} on {}</div><br/>".format(
             eat.amount, NOSH_MOO_UNIT[eat.food], eat.food.name, eat.date)
 	result += "</div>"
