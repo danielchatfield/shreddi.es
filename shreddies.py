@@ -30,20 +30,20 @@ NOSH_MOO_UNIT = {
     Nosh.MILK: "pints"
 }
 
-def total(noshOfChoice):
+def total(nosh_of_choice):
     result = "<div class='noshSummary'>"
     eats = Nom.query().order(-Nom.date).fetch(1000)
     total = 0
     for eat in eats:
-        if (eat.food==noshOfChoice):
+        if (eat.food==nosh_of_choice):
             total += eat.amount
     result += "Since records began, Mallinson has nommed {} {} of {}.<br/>"
-              .format(total, NOSH_MOO_UNIT[noshOfChoice], noshOfChoice.name)
-    #Special cases below
-    if (noshOfChoice = Nosh.SHREDDIES):
+              .format(total, NOSH_MOO_UNIT[nosh_of_choice], nosh_of_choice.name)
+    # Special cases below
+    if (nosh_of_choice = Nosh.SHREDDIES):
         result += "This is equivalent to {} red bricks.<br/>"
                 .format(total / 2500)
-    elif (noshOfChoice = Nosh.MILK):
+    elif (nosh_of_choice = Nosh.MILK):
         result += "This is equivalent to {} olympic sized swimming pools<br/>"
                 .format(total / 4385964.912)
     result+= "</div>"
