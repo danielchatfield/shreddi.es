@@ -46,7 +46,7 @@ def total(nosh_of_choice):
     elif (nosh_of_choice = Nosh.MILK):
         result += "This is equivalent to {} olympic sized swimming pools<br/>"
                 .format(total / 4385964.912)
-    result+= "</div>"
+    result += "</div>"
     return result
 
 
@@ -57,7 +57,7 @@ def home():
     for eat in eats:
         result += "mallinson nommed {} {} of {} on {}<br/>".format(
             eat.amount, NOSH_MOO_UNIT[eat.food], eat.food.name, eat.date)
-    result+="<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
+    result += "<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
     return result
 
 
