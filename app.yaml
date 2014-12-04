@@ -17,6 +17,8 @@ libraries:
   version: "2.6"
 - name: markupsafe
   version: "0.15"
+- name: pycrypto
+  version: "2.3"
 
 inbound_services:
 - warmup
@@ -24,9 +26,6 @@ inbound_services:
 handlers:
 - url: /static
   static_dir: static
-- url: /yum
-  script: shreddies.app
-  login: admin
 - url: .*
   script: shreddies.app
 
