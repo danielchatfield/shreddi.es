@@ -6,11 +6,6 @@ threadsafe: true
 
 default_expiration: "5d"
 
-cron:
-- description: keep instance alive
-  url: /
-  schedule: every 2 minutes
-
 builtins:
 - appstats: on
 - admin_redirect: on
