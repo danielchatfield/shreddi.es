@@ -60,7 +60,7 @@ def home():
         result += "mallinson nommed {} {} of {} on {}</div><br/>".format(
             eat.amount, NOSH_MOO_UNIT[eat.food], eat.food.name, eat.date)
 	result += "</div>
-    result+="<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
+    result +="<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
     result += "<br />" + total(Nosh.SHREDDIES) + total(Nosh.MILK) 
     return result
 
